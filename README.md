@@ -60,3 +60,13 @@ A creative hiring platform for media professionals. Photographers & editors can 
 - **Deployment:** Netlify + Render  
 ...
 ---
+
+Day 1 
+
+Concept Covered: Manage All Daily Tasks & Project Milestones using GitHub Projects
+For this concept, I have created a GitHub Projects Board that helps me:
+
+Plan my daily goals
+
+Track progress across backend and frontend development
+
