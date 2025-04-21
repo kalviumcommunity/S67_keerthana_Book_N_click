@@ -1,12 +1,20 @@
-const mongoose = require('mongoose')
+// models/Project.js
+const mongoose = require("mongoose");
 
 const projectSchema = new mongoose.Schema({
-    photographerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Photographer' },
-    title: String,
-    description: String,
-    media: [String], // Cloudinary image/video URLs
-    createdAt: { type: Date, default: Date.now },
-  });
-  
-  module.exports = mongoose.model('Project', projectSchema);
-  
+  photographer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Photographer",
+    required: true,
+  },
+  title: String,
+  description: String,
+  imageUrl: String, // stored from Cloudinary
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+module.exports = mongoose.model("Project", projectSchema);
+

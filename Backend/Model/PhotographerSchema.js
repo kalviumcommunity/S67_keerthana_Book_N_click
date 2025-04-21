@@ -1,19 +1,15 @@
-const mongoose = require('mongoose')
-
-
-const PhotographerSchema = new mongoose.Schema({
-    name:{type:String,required:true},
-    email:{type:String,required:true},
-    password:{type:String,required:true},
-    serviceOffered:[String],
-    location:String,
-    availability:[Date],
+const photographerSchema = new mongoose.Schema({
+    name: String,
+    email: { type: String, unique: true },
+    password: String,
+    servicesOffered: [String], // like wedding, event, portraits etc
+    location: String, 
+    availability: [Date], // optional, or in Calendar schema
     bio: String,
-  portfolio: [String], 
-  rating: { type: Number, default: 0 },
-  createdAt: { type: Date, default: Date.now },
-
+    portfolio: [String], // URLs to images/videos
+    rating: { type: Number, default: 0 },
+    createdAt: { type: Date, default: Date.now },
   });
   
-  module.exports = mongoose.model('Photographer', PhotographerSchema);
+  module.exports = mongoose.model('Photographer', photographerSchema);
   
