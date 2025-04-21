@@ -70,3 +70,7 @@ Plan my daily goals
 
 Track progress across backend and frontend development
 
+Day 2
+
+Written all Schema required in Model folder
+
