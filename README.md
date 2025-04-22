@@ -74,3 +74,23 @@ Day 2
 
 Written all Schema required in Model folder
 
+Day 3
+
+Concept: Database Read and Write Performed
+This task demonstrates successful implementation of database read and write operations.
+
+🔧 What I Did:
+Connected the Express server to MongoDB using Mongoose.
+
+Created a Photographer schema to represent a photographer’s data.
+
+Implemented two API routes:
+
+POST /photographer: Adds a new photographer to the database.
+
+GET /photographer: Fetches all photographers from the database.
+
+Used proper error handling for both routes.
+Files Involved:
+Model/PhotographerSchema.js – Mongoose schema definition.
+Controllers/photographerRouter.js – Contains GET and POST API logic.
