@@ -94,3 +94,18 @@ Used proper error handling for both routes.
 Files Involved:
 Model/PhotographerSchema.js – Mongoose schema definition.
 Controllers/photographerRouter.js – Contains GET and POST API logic.
+
+Day4
+
+Post Api implement to all Schema .
+
+Files Changed:
+Controllers/photographerRouter.js – Contains GET and POST API logic.
+
+Controllers/BookingRouter.js – Contains  POST API logic.
+
+Controllers/ProjectRouter.js -Contains  POST API logic.
+
+Controllers/ReviewRouter.js - Contains  POST API logic.
+
+
