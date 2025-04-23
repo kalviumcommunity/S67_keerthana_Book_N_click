@@ -7,9 +7,15 @@ require('dotenv').config({
 })
 const url = process.env.url
 const photgrapher = require('./Controllers/PhotographerRouter')
+const review = require('./Controllers/ReviewRouter')
+const Booking = require('./Controllers/BookingRouter')
+const project = require('./Controllers/ProjectRouter')
 
 app.use(express.json())
 app.use("/",photgrapher)
+app.use("/",review)
+app.use("/",Booking)
+
 
 app.listen(port,async(req,res)=>{
     try{

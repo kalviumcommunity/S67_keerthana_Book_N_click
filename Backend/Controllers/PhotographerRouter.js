@@ -6,8 +6,24 @@ const photographerRouter = Router();
 
 photographerRouter.post("/photographer",async(req,res)=>{
     try{
-        const newphotographer = new Photographer(req.body);
-        await newphotographer.save();
+        const { name, email, password, servicesOffered, location, availability, bio, portfolio,price } = req.body;
+        if(!name && !email && !location && !availability && !portfolio){
+            return res.status(200).json({message:"please fill the form completly"})
+        }
+        const newPhotographer = new Photographer({
+            name,
+            email,
+            password,
+            servicesOffered,
+            location,
+            availability, // expects array of date strings
+            bio,
+            portfolio,
+            price,
+          });
+      
+          await newPhotographer.save();
+        
         return res.status(200).json({message:"new photographer added",data:newphotographer})
     } catch (err) {
         res.status(400).json({ message: 'Failed to add photographer', error: err.message });

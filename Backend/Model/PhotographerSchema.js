@@ -9,7 +9,7 @@ const photographerSchema = new mongoose.Schema({
     availability: [Date], // optional, or in Calendar schema
     bio: String,
     portfolio: [String], // URLs to images/videos
-    rating: { type: Number, default: 0 },
+    price:Number,
     createdAt: { type: Date, default: Date.now },
   });
   
