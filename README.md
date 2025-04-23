@@ -108,4 +108,15 @@ Controllers/ProjectRouter.js -Contains  POST API logic.
 
 Controllers/ReviewRouter.js - Contains  POST API logic.
 
+Day 5
+Implement   GET API
 
+Controllers/photographerRouter.js – Contains GET  API logic.
+
+Controllers/BookingRouter.js – Contains  GET API logic.
+
+Controllers/ProjectRouter.js -Contains  GET API logic.
+
+Controllers/ReviewRouter.js - Contains  GET API logic.
+
+Controllers/PaymentRouter.js -  Contains  GET API logic.

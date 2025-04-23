@@ -40,4 +40,13 @@ photographerRouter.get("/photographer",async(req,res)=>{
       }
 })
 
+photographerRouter.get("/photographer/:id",async(req,res)=>{
+    try{
+        const allphotographer = await Photographer.findById(req.params.id);
+        res.status(200).json(allphotographer)
+    }catch (err) {
+        res.status(500).json({ message: 'Failed to fetch photographers', error: err.message });
+      }
+})
+
 module.exports = photographerRouter;
