@@ -143,3 +143,8 @@ Controllers/ReviewRouter.js - Contains  POST API logic.
 
 Controllers/PaymentRouter.js -  Contains  POST API logic.
 
+Day 7:
+
+Implemented relation between entities in database:
+
+file changed: Model/bookSchema.js
