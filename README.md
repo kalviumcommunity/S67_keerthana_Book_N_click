@@ -126,3 +126,20 @@ Controllers/PaymentRouter.js -  Contains  GET API logic.
 
 
 Request an AI review by @CodiumAI-Agent /review
+
+
+Day 6:
+
+Post API implemented:
+
+
+Controllers/photographerRouter.js – Contains POST  API logic.
+
+Controllers/BookingRouter.js – Contains  POST API logic.
+
+Controllers/ProjectRouter.js -Contains  POST API logic.
+
+Controllers/ReviewRouter.js - Contains  POST API logic.
+
+Controllers/PaymentRouter.js -  Contains  POST API logic.
+
