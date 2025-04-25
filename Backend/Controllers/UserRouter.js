@@ -40,4 +40,22 @@ UserRouter.get('/user',async(req,res)=>{
     }
 })
 
+UserRouter.put('/user/:id', async (req, res) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ message: "User updated successfully", data: updatedUser });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 module.exports = UserRouter
