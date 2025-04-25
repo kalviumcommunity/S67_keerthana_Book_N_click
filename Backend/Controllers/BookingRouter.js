@@ -41,23 +41,21 @@ Bookingrouter.post("/booking",async(req,res)=>{
 
 })
 
-bookingRouter.put('/booking/:id', async (req, res) => {
-  try {
-    const updatedBooking = await Booking.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
 
-    if (!updatedBooking) {
+Bookingrouter.put("/booking/:id",async(req,res)=>{
+  try{
+    const updated = await Booking.findByIdAndUpdate(req.params.id,req.body,{new:true})
+    if (!updated) {
       return res.status(404).json({ message: "Booking not found" });
     }
-
+    
     res.json({ message: "Booking updated", data: updatedBooking });
-  } catch (err) {
+  }catch (err) {
     res.status(500).json({ error: err.message });
   }
-});
 
+
+})
 
 
 

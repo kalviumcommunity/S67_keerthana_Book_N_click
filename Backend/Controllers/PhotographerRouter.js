@@ -49,21 +49,14 @@ photographerRouter.get("/photographer/:id",async(req,res)=>{
       }
 })
 
-photographerRouter.put('/photographer/:id', async (req, res) => {
-    try {
-      const updatedPhotographer = await Photographer.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-        runValidators: true,
-      });
-  
-      if (!updatedPhotographer) {
-        return res.status(404).json({ message: "Photographer not found" });
-      }
-  
-      res.json({ message: "Photographer updated", data: updatedPhotographer });
-    } catch (err) {
-      res.status(500).json({ error: err.message });
+photographerRouter.put('/photographer/:id',async(req,res)=>{
+    try{
+        const updated = Photographer.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        if(!updated){
+            return res.status(400).json({message:"Photographer not found"})
+        }
+        return res.json(u)
     }
-  });
+})
   
 module.exports = photographerRouter;

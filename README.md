@@ -81,6 +81,8 @@ This task demonstrates successful implementation of database read and write oper
 
 🔧 What I Did:
 Connected the Express server to MongoDB using Mongoose.
+ title or description  
+- `Controllers/ReviewRouter.js` – PUT to edit review/rating  
 
 Created a Photographer schema to represent a photographer’s data.
 
@@ -122,15 +124,5 @@ Controllers/ReviewRouter.js - Contains  GET API logic.
 Controllers/PaymentRouter.js -  Contains  GET API logic.
 
 
-### ✅ Day 6 – PUT APIs Implemented  
-**Concept:** PUT API Used
 
-🔧 What I Did:  
-- Created PUT endpoints to allow editing/updating existing data  
-- Handled scenarios like updating profile info, modifying booking details, editing project descriptions  
-
-📁 **Files Changed:**  
-- `Controllers/photographerRouter.js` – PUT to update photographer info  
-- `Controllers/BookingRouter.js` – PUT to modify booking date or time  
-- `Controllers/ProjectRouter.js` – PUT to update project title or description  
-- `Controllers/ReviewRouter.js` – PUT to edit review/rating  
+Request an AI review by @CodiumAI-Agent /review
