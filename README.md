@@ -148,3 +148,8 @@ Day 7:
 Implemented relation between entities in database:
 
 file changed: Model/bookSchema.js
+
+
+Day 8:
+
+Initialised Frontend for the project
