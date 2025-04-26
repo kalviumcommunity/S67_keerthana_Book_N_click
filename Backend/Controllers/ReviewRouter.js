@@ -35,6 +35,22 @@ reviewRouter.get("/",async(req,res)=>{
 })
 
 
+reviewRouter.put('/review/:id', async (req, res) => {
+  try {
+    const updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedReview) {
+      return res.status(404).json({ message: "Review not found" });
+    }
+
+    res.json({ message: "Review updated", data: updatedReview });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 
 

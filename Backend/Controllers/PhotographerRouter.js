@@ -49,4 +49,14 @@ photographerRouter.get("/photographer/:id",async(req,res)=>{
       }
 })
 
+photographerRouter.put('/photographer/:id',async(req,res)=>{
+    try{
+        const updated = Photographer.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        if(!updated){
+            return res.status(400).json({message:"Photographer not found"})
+        }
+        return res.json(u)
+    }
+})
+  
 module.exports = photographerRouter;

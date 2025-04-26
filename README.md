@@ -81,6 +81,8 @@ This task demonstrates successful implementation of database read and write oper
 
 🔧 What I Did:
 Connected the Express server to MongoDB using Mongoose.
+ title or description  
+- `Controllers/ReviewRouter.js` – PUT to edit review/rating  
 
 Created a Photographer schema to represent a photographer’s data.
 
@@ -120,3 +122,24 @@ Controllers/ProjectRouter.js -Contains  GET API logic.
 Controllers/ReviewRouter.js - Contains  GET API logic.
 
 Controllers/PaymentRouter.js -  Contains  GET API logic.
+
+
+
+Request an AI review by @CodiumAI-Agent /review
+
+
+Day 6:
+
+Post API implemented:
+
+
+Controllers/photographerRouter.js – Contains POST  API logic.
+
+Controllers/BookingRouter.js – Contains  POST API logic.
+
+Controllers/ProjectRouter.js -Contains  POST API logic.
+
+Controllers/ReviewRouter.js - Contains  POST API logic.
+
+Controllers/PaymentRouter.js -  Contains  POST API logic.
+
