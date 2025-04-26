@@ -1,5 +1,5 @@
-const Project = require("../models/Project");
-const Photographer = require("../models/Photographer");
+const Project = require("../Model/ProjectSchema");
+const Photographer = require("../Model/PhotographerSchema");
 const { Router } = require("express");
 
 const projectRouter = Router();

@@ -5,7 +5,7 @@ const connectDB = require('./db')
 require('dotenv').config({
     path:'./.env'
 })
-const url = process.env.url
+const url = process.env.MONGODB_URL
 const photgrapher = require('./Controllers/PhotographerRouter')
 const review = require('./Controllers/ReviewRouter')
 const Booking = require('./Controllers/BookingRouter')
@@ -17,6 +17,7 @@ app.use("/",photgrapher)
 app.use("/",review)
 app.use("/",Booking)
 app.use("/",project)
+app.use("/",User)
 
 
 app.listen(port,async(req,res)=>{

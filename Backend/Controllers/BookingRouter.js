@@ -1,4 +1,4 @@
-const Booking = require('../Model/BookingSchema')
+const Booking = require('../Model/BookingSchema1')
 const Photographer = require('../Model/PhotographerSchema')
 const {Router} = require('express')
 const Bookingrouter = Router();

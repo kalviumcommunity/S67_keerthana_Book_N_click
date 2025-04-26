@@ -153,3 +153,9 @@ file changed: Model/bookSchema.js
 Day 8:
 
 Initialised Frontend for the project
+
+
+
+Day 9:
+
+Added a folder called Capstone and initialised bruno 
