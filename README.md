@@ -60,3 +60,63 @@ A creative hiring platform for media professionals. Photographers & editors can 
 - **Deployment:** Netlify + Render  
 ...
 ---
+
+Day 1 
+
+Concept Covered: Manage All Daily Tasks & Project Milestones using GitHub Projects
+For this concept, I have created a GitHub Projects Board that helps me:
+
+Plan my daily goals
+
+Track progress across backend and frontend development
+
+Day 2
+
+Written all Schema required in Model folder
+
+Day 3
+
+Concept: Database Read and Write Performed
+This task demonstrates successful implementation of database read and write operations.
+
+🔧 What I Did:
+Connected the Express server to MongoDB using Mongoose.
+
+Created a Photographer schema to represent a photographer’s data.
+
+Implemented two API routes:
+
+POST /photographer: Adds a new photographer to the database.
+
+GET /photographer: Fetches all photographers from the database.
+
+Used proper error handling for both routes.
+Files Involved:
+Model/PhotographerSchema.js – Mongoose schema definition.
+Controllers/photographerRouter.js – Contains GET and POST API logic.
+
+Day4
+
+Post Api implement to all Schema .
+
+Files Changed:
+Controllers/photographerRouter.js – Contains GET and POST API logic.
+
+Controllers/BookingRouter.js – Contains  POST API logic.
+
+Controllers/ProjectRouter.js -Contains  POST API logic.
+
+Controllers/ReviewRouter.js - Contains  POST API logic.
+
+Day 5
+Implement   GET API
+
+Controllers/photographerRouter.js – Contains GET  API logic.
+
+Controllers/BookingRouter.js – Contains  GET API logic.
+
+Controllers/ProjectRouter.js -Contains  GET API logic.
+
+Controllers/ReviewRouter.js - Contains  GET API logic.
+
+Controllers/PaymentRouter.js -  Contains  GET API logic.
