@@ -24,7 +24,7 @@ photographerRouter.post("/photographer",async(req,res)=>{
       
           await newPhotographer.save();
         
-        return res.status(200).json({message:"new photographer added",data:newphotographer})
+        return res.status(200).json({message:"new photographer added",data:newPhotographer})
     } catch (err) {
         res.status(400).json({ message: 'Failed to add photographer', error: err.message });
       }
@@ -51,11 +51,13 @@ photographerRouter.get("/photographer/:id",async(req,res)=>{
 
 photographerRouter.put('/photographer/:id',async(req,res)=>{
     try{
-        const updated = Photographer.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        const updated = await Photographer.findByIdAndUpdate(req.params.id,req.body,{new:true})
         if(!updated){
             return res.status(400).json({message:"Photographer not found"})
         }
-        return res.json(u)
+        return res.json(updated)
+    }catch(err){
+        return res.json(err.message)
     }
 })
   

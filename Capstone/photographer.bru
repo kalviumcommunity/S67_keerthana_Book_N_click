@@ -1,0 +1,29 @@
+meta {
+  name: photographer
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5000/photographer
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Aarav Sharma",
+    "email": "keerthana.weddings@example11.com",
+    "password": "securePass123",
+    "servicesOffered": ["Wedding", "Event", "Portraits"],
+    "location": "Mumbai, India",
+    "availability": ["2025-05-01T10:00:00Z", "2025-05-10T14:00:00Z"],
+    "bio": "I am a passionate wedding and event photographer with 5+ years of experience capturing life's most precious moments.",
+    "portfolio": [
+      "https://res.cloudinary.com/demo/image/upload/v1234567890/portfolio1.jpg",
+      "https://res.cloudinary.com/demo/image/upload/v1234567890/portfolio2.jpg"
+    ],
+    "price": 25000
+  }
+  
+}
