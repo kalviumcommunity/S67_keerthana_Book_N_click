@@ -6,6 +6,21 @@ meta {
 
 post {
   url: http://localhost:5000/user
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "name": "Arjun Mehta",
+    "email": "arjun@example.com",
+    "password": "password456",
+    "role": "client",
+    "profilePic": "https://example.com/images/arjun.jpg",
+    "addresses": [
+      "56, Nehru Street, Chennai",
+      "Flat 202, Palm Residency, Chennai"
+    ]
+  }
+  
 }
