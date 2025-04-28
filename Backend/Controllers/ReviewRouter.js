@@ -27,7 +27,7 @@ reviewRouter.post("/review",async(req,res)=>{
 
 reviewRouter.get("/",async(req,res)=>{
   try{
-    const review = new Review.find()
+    const review = await Review.find()
     res.json.status(201).json(review)
   }catch(err){
     res.status(500).json({error:err.message})
