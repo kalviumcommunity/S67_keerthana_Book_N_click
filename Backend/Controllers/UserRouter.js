@@ -15,16 +15,19 @@ UserRouter.post('/user', async (req, res) => {
         return res.status(409).json({ message: "User already exists with this email." });
       }
   
-      const newUser = new User({
-        name,
-        email,
-        password,
-        role,
-        profilePic,
-        addresses,
-      });
-  
-      await newUser.save();
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+      role,
+      profilePic,
+      addresses,
+    });
+
+    await newUser.save();
+    res.status(201).json({ message: "User created successfully!", data: newUser });
       res.status(201).json({ message: "User created successfully!", data: newUser });
     } catch (err) {
       res.status(500).json({ error: err.message });
