@@ -1,38 +1,51 @@
 const User = require('../Model/UserModel')
 const express = require('express')
 const UserRouter = express.Router()
+const jwt = require('jsonwebtoken')
+const authmiddleware = require('../Middleware/authmiddleware')
 
-UserRouter.post('/user', async (req, res) => {
-    try {
-      const { name, email, password, role, profilePic, addresses } = req.body;
-  
-      if (!name || !email || !password) {
-        return res.status(400).json({ message: "Name, email, and password are required." });
-      }
-  
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        return res.status(409).json({ message: "User already exists with this email." });
-      }
-  
-      const hashedPassword = await bcrypt.hash(password, 10);
+UserRouter.post('/login', async (req, res) => {
+  const { email, password } = req.body;
 
-    const newUser = new User({
-      name,
-      email,
-      password: hashedPassword,
-      role,
-      profilePic,
-      addresses,
-    });
+  try {
+    const user = await User.findOne({ email });
 
-    await newUser.save();
-    res.status(201).json({ message: "User created successfully!", data: newUser });
-      res.status(201).json({ message: "User created successfully!", data: newUser });
-    } catch (err) {
-      res.status(500).json({ error: err.message });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
-  });
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+
+    // 🔐 JWT Token Generation inline
+    const token = jwt.sign(
+      { id: user._id, email: user.email, role: user.role },
+      process.env.JWT_SECRET || 'your_fallback_secret',
+      { expiresIn: '1h' }
+    );
+
+    res.status(200).json({
+      message: 'Login successful',
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+UserRouter.get('/profile', authmiddleware, async (req, res) => {
+  const user = await User.findById(req.user.id);
+  res.json(user);
+});
+
 
 UserRouter.get('/user',async(req,res)=>{
     try{
