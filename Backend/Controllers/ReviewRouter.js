@@ -17,7 +17,7 @@ reviewRouter.post("/review",async(req,res)=>{
           });
       
           await newReview.save();
-          res.status(201).json({ message: "Review submitted successfully", data: newReview });
+          res.status(200).json({ message: "Review submitted successfully", data: newReview });
     }catch (err) {
         console.error("Error while posting review:", err.message);
         res.status(500).json({ message: "Failed to submit review", error: err.message });
@@ -27,8 +27,8 @@ reviewRouter.post("/review",async(req,res)=>{
 
 reviewRouter.get("/",async(req,res)=>{
   try{
-    const review = new Review.find()
-    res.json.status(201).json(review)
+    const review = await Review.find()
+    res.status(201).json(review)
   }catch(err){
     res.status(500).json({error:err.message})
   }
