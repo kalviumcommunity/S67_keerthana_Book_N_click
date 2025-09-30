@@ -1,5 +1,17 @@
+
 {
+  "name": "S67_keerthana_Book_N_click",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node Server.js"
+  },
   "dependencies": {
-    "bcrypt": "^6.0.0"
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.3.4"
   }
 }
