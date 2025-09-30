@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const PORT = 5000
 const connectDB = require('./db')
 require('dotenv').config({
     path:'./.env'
@@ -20,12 +20,17 @@ app.use("/",project)
 app.use("/",User)
 
 
-app.listen(port,async(req,res)=>{
-    try{
-        await connectDB(url)
-    
-    console.log(`server is running in ${port}`)
-    }catch(err){
-        console.error(err);
+const startServer = async () => {
+    try {
+        await connectDB(process.env.MONGODB_URL);
+        console.log('MongoDB connected successfully');
+
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    } catch (err) {
+        console.error('Failed to connect to MongoDB', err);
     }
-})
+};
+
+startServer();
